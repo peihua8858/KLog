@@ -70,7 +70,7 @@ public final class KLog {
         IS_SHOW_LOG = isShowLog;
     }
 
-    public static void init(boolean isShowLog,  String tag) {
+    public static void init(boolean isShowLog, String tag) {
         IS_SHOW_LOG = isShowLog;
         mGlobalTag = tag;
         mIsGlobalTagEmpty = TextUtils.isEmpty(mGlobalTag);
@@ -87,7 +87,9 @@ public final class KLog {
     public static void v(Object msg) {
         printLog(V, null, msg);
     }
-
+    public static void v(String msg) {
+        printLog(V, null, msg);
+    }
     public static void v(String tag, Object... args) {
         printLog(V, tag, args);
     }
@@ -101,6 +103,10 @@ public final class KLog {
     }
 
     public static void d(Object msg) {
+        printLog(D, null, msg);
+    }
+
+    public static void d(String msg) {
         printLog(D, null, msg);
     }
 
@@ -119,7 +125,9 @@ public final class KLog {
     public static void i(Object msg) {
         printLog(I, null, msg);
     }
-
+    public static void i(String msg) {
+        printLog(I, null, msg);
+    }
     public static void i(String tag, Object... args) {
         printLog(I, tag, args);
     }
@@ -135,7 +143,9 @@ public final class KLog {
     public static void w(Object msg) {
         printLog(W, null, msg);
     }
-
+    public static void w(String msg) {
+        printLog(W, null, msg);
+    }
     public static void w(String tag, Object... args) {
         printLog(W, tag, args);
     }
@@ -151,7 +161,9 @@ public final class KLog {
     public static void e(Object msg) {
         printLog(E, null, msg);
     }
-
+    public static void e(String msg) {
+        printLog(E, null, msg);
+    }
     public static void e(String tag, Object... args) {
         printLog(E, tag, args);
     }
@@ -167,7 +179,9 @@ public final class KLog {
     public static void a(Object msg) {
         printLog(A, null, msg);
     }
-
+    public static void a(String msg) {
+        printLog(A, null, msg);
+    }
     public static void a(String tag, Object... args) {
         printLog(A, tag, args);
     }
@@ -334,7 +348,7 @@ public final class KLog {
             tag = mGlobalTag;
         }
 
-        String msg = (objects == null) ? NULL_TIPS : getObjectsString(objects);
+        String msg = (objects == null || objects.length == 0) ? NULL_TIPS : getObjectsString(objects);
         String headString = "[ (" + className + ":" + lineNumber + ")#" + methodName + " ] ";
 
         return new String[]{tag, msg, headString};
