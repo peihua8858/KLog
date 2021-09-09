@@ -87,9 +87,11 @@ public final class KLog {
     public static void v(Object msg) {
         printLog(V, null, msg);
     }
+
     public static void v(String msg) {
         printLog(V, null, msg);
     }
+
     public static void v(String tag, Object... args) {
         printLog(V, tag, args);
     }
@@ -125,9 +127,11 @@ public final class KLog {
     public static void i(Object msg) {
         printLog(I, null, msg);
     }
+
     public static void i(String msg) {
         printLog(I, null, msg);
     }
+
     public static void i(String tag, Object... args) {
         printLog(I, tag, args);
     }
@@ -143,9 +147,11 @@ public final class KLog {
     public static void w(Object msg) {
         printLog(W, null, msg);
     }
+
     public static void w(String msg) {
         printLog(W, null, msg);
     }
+
     public static void w(String tag, Object... args) {
         printLog(W, tag, args);
     }
@@ -161,9 +167,11 @@ public final class KLog {
     public static void e(Object msg) {
         printLog(E, null, msg);
     }
+
     public static void e(String msg) {
         printLog(E, null, msg);
     }
+
     public static void e(String tag, Object... args) {
         printLog(E, tag, args);
     }
@@ -179,9 +187,11 @@ public final class KLog {
     public static void a(Object msg) {
         printLog(A, null, msg);
     }
+
     public static void a(String msg) {
         printLog(A, null, msg);
     }
+
     public static void a(String tag, Object... args) {
         printLog(A, tag, args);
     }
@@ -323,14 +333,17 @@ public final class KLog {
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
         StackTraceElement targetElement = stackTrace[stackTraceIndex];
-        String className = targetElement.getClassName();
-        String[] classNameInfo = className.split("\\.");
-        if (classNameInfo.length > 0) {
-            className = classNameInfo[classNameInfo.length - 1] + SUFFIX;
-        }
-
-        if (className.contains("$")) {
-            className = className.split("\\$")[0] + SUFFIX;
+        String fileName = targetElement.getFileName();
+        String className = fileName;
+        if (TextUtils.isEmpty(fileName)) {
+            className = targetElement.getClassName();
+            String[] classNameInfo = className.split("\\.");
+            if (classNameInfo.length > 0) {
+                className = classNameInfo[classNameInfo.length - 1] + SUFFIX;
+            }
+            if (className.contains("$")) {
+                className = className.split("\\$")[0] + SUFFIX;
+            }
         }
 
         String methodName = targetElement.getMethodName();
