@@ -56,8 +56,8 @@ public final class KLog {
     public static final int E = 0x5;
     public static final int A = 0x6;
 
-    private static final int JSON = 0x7;
-    private static final int XML = 0x8;
+    public static final int JSON = 0x7;
+    public static final int XML = 0x8;
 
     private static final int STACK_TRACE_INDEX_5 = 5;
     private static final int STACK_TRACE_INDEX_4 = 4;
@@ -261,9 +261,6 @@ public final class KLog {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");
         for (String trace : traceString) {
-            if (trace.contains("at com.dresslily.klog.KLog")) {
-                continue;
-            }
             sb.append(trace).append("\n");
         }
         String[] contents = wrapperContent(STACK_TRACE_INDEX_4, null, sb.toString());
@@ -273,13 +270,16 @@ public final class KLog {
         BaseLog.printDefault(D, tag, headString + msg);
     }
 
-    private static void printLog(int type, String tagStr, Object... objects) {
+    public static void printLog(int type, String tagStr, Object... objects) {
+        printLog(STACK_TRACE_INDEX_5, type, tagStr, objects);
+    }
 
+    public static void printLog(int stackTraceIndex, int type, String tagStr, Object... objects) {
         if (!IS_SHOW_LOG) {
             return;
         }
 
-        String[] contents = wrapperContent(STACK_TRACE_INDEX_5, tagStr, objects);
+        String[] contents = wrapperContent(stackTraceIndex, tagStr, objects);
         String tag = contents[0];
         String msg = contents[1];
         String headString = contents[2];
@@ -302,17 +302,19 @@ public final class KLog {
             default:
                 break;
         }
-
     }
 
     private static void printDebug(String tagStr, Object... objects) {
-        String[] contents = wrapperContent(STACK_TRACE_INDEX_5, tagStr, objects);
+        printDebug(STACK_TRACE_INDEX_5, tagStr, objects);
+    }
+
+    public static void printDebug(int stackTraceIndex, String tagStr, Object... objects) {
+        String[] contents = wrapperContent(stackTraceIndex, tagStr, objects);
         String tag = contents[0];
         String msg = contents[1];
         String headString = contents[2];
         BaseLog.printDefault(D, tag, headString + msg);
     }
-
 
     private static void printFile(String tagStr, File targetDirectory, String fileName, Object objectMsg) {
 
@@ -328,7 +330,7 @@ public final class KLog {
         FileLog.printFile(tag, targetDirectory, fileName, headString, msg);
     }
 
-    private static String[] wrapperContent(int stackTraceIndex, String tagStr, Object... objects) {
+    public static String[] wrapperContent(int stackTraceIndex, String tagStr, Object... objects) {
 
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
