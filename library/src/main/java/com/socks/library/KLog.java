@@ -59,7 +59,7 @@ public final class KLog {
     public static final int JSON = 0x7;
     public static final int XML = 0x8;
 
-    private static final int STACK_TRACE_INDEX_5 = 5;
+    private static final int STACK_TRACE_INDEX_5 = 6;
     private static final int STACK_TRACE_INDEX_4 = 4;
 
     private static String mGlobalTag;
