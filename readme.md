@@ -1,5 +1,5 @@
 :heartpulse:Klog:heartpulse:
- 一款针对Android平台下基于[Klog](https://github.com/ZhaoKaiQiang/KLog)的日志工具<br>
+ 一款针对Android平台下基于[Klog](https://github.com/ZhaoKaiQiang/KLog)的日志工具,修改kotlin无法跳转代码行的问题<br>
 
 [![Jitpack](https://jitpack.io/v/peihua8858/KLog.svg)](https://github.com/peihua8858)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/peihua8858)
