@@ -51,7 +51,7 @@ dependencies {
 - 添加对长字符串的支持</br>
 
 ## 演示效果
-[![]([https://github.com/ZhaoKaiQiang/KLog#readme](https://github.com/ZhaoKaiQiang/KLog/raw/master/image/demo.gif))]
+![](https://github.com/ZhaoKaiQiang/KLog/raw/master/image/demo.gif)
 
 ## License
 ```sh
