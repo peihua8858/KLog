@@ -42,10 +42,16 @@ dependencies {
 ```
 
 ## 进阶使用
+- 可以使用不带标签的 KLog.d()</br>
+- 打印日志信息，包含行号和方法名称</br>
+- 跳转到调用日志的位置，通过在Android Studio Logcat中点击</br>
+- 添加对长 JSON 字符串的支持</br>
+- KLog.file() 可以将日志保存到文件</br>
+- 添加对xml格式字符串的支持</br>
+- 添加对长字符串的支持</br>
 
-简单用例如下所示:
-
-[[查看](https://github.com/ZhaoKaiQiang/KLog#readme)]
+## 演示效果
+[![]([https://github.com/ZhaoKaiQiang/KLog#readme](https://github.com/ZhaoKaiQiang/KLog/raw/master/image/demo.gif))]
 
 ## License
 ```sh
