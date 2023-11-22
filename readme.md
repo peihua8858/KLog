@@ -11,7 +11,7 @@
 -[最新版本](https://github.com/peihua8858/KLog/releases/tag/1.0.11)<br>
 -[如何引用](#如何引用)<br>
 -[进阶使用](#进阶使用)<br>
--[演示效果](#演示效果)<br>
+-[演示效果](https://github.com/ZhaoKaiQiang/KLog#readme)<br>
 -[如何提Issues](https://github.com/peihua8858/KLog/wiki/%E5%A6%82%E4%BD%95%E6%8F%90Issues%3F)<br>
 -[License](#License)<br>
 
