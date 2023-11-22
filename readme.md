@@ -1,4 +1,5 @@
 :heartpulse:Klog:heartpulse:
+
  一款针对Android平台下基于[Klog](https://github.com/ZhaoKaiQiang/KLog)的日志工具,修改kotlin无法跳转代码行的问题<br>
 
 [![Jitpack](https://jitpack.io/v/peihua8858/KLog.svg)](https://github.com/peihua8858)
@@ -46,7 +47,22 @@ dependencies {
 
 [[查看](https://github.com/ZhaoKaiQiang/KLog#readme)]
 
+## License
+```sh
+Copyright 2023 peihua
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
 
 
 
